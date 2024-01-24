@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Frontend.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Frontend.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Frontend">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="0" Grid.Row="0" Content="{Binding Board[0][0]}" Command="{Binding CellClickCommand}" CommandParameter="0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Column="1" Grid.Row="0" Content="{Binding Board[0][1]}" Command="{Binding CellClickCommand}" CommandParameter="0,1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Column="2" Grid.Row="0" Content="{Binding Board[0][2]}" Command="{Binding CellClickCommand}" CommandParameter="0,2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Button Grid.Column="0" Grid.Row="1" Content="{Binding Board[1][0]}" Command="{Binding CellClickCommand}" CommandParameter="1,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Column="1" Grid.Row="1" Content="{Binding Board[1][1]}" Command="{Binding CellClickCommand}" CommandParameter="1,1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Column="2" Grid.Row="1" Content="{Binding Board[1][2]}" Command="{Binding CellClickCommand}" CommandParameter="1,2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Button Grid.Column="0" Grid.Row="2" Content="{Binding Board[2][0]}" Command="{Binding CellClickCommand}" CommandParameter="2,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Column="1" Grid.Row="2" Content="{Binding Board[2][1]}" Command="{Binding CellClickCommand}" CommandParameter="2,1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Column="2" Grid.Row="2" Content="{Binding Board[2][2]}" Command="{Binding CellClickCommand}" CommandParameter="2,2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+    </Grid>
+
+</Window>
